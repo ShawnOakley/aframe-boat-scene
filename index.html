@@ -19,23 +19,26 @@
         <a-asset-item id="ship-obj" src="./objects/ship.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" src="/objects/ship.mtl"></a-asset-item>
         <img id="space" src="./images/space.jpg">
-        <a-timeline id="shiptl">
-          <a-timeline-group offset='100'>
-            <a-timeline-animation select="#ship1" name="positionone"></a-timeline-animation>
-            <a-timeline-animation select="#monster1" name="monsterpositionone"></a-timeline-animation>
-
-            <a-timeline-animation select="#ship1" name="positiontwo"></a-timeline-animation>
-          </a-timeline-group>
-        </a-timeline>
+        <!-- <a-timeline id="shiptl"> -->
+          <!-- <a-timeline-group offset='100'> -->
+            <!-- <a-timeline-animation select="#ship1" name="positionone"></a-timeline-animation> -->
+            <!-- <a-timeline-animation select="#monster1" name="monsterpositionone"></a-timeline-animation> -->
+            <!-- <a-timeline-animation select="#monster1" name="monsterrotationone"></a-timeline-animation> -->
+            <!-- <a-timeline-animation select="#ship1" name="positiontwo"></a-timeline-animation> -->
+          <!-- </a-timeline-group> -->
+        <!-- </a-timeline> -->
         <a-mixin id="ship"
           animation__positionone="property: position; dur: 5000; fill: forward; to: 0 0.5 -3; from: 10 0.5 -3; autoplay: true"
-          animation__positiontwo="property: position; delay: 5000; dur: 5000; fill: forward; to: -10 0.5 -3; from: 0 0.5 -3; autoplay: true"
+          animation__rotationone="property: rotation; fill: forward;  easing: easeInOutSine; delay: 5000; dur: 300; to: 0 90 0; autoplay: true;"
+          animation__positiontwo="property: position; delay: 5400; dur: 1000; fill: forward; to: 0 0.5 6; from: 0 0.5 -3; autoplay: true"
           position="10 0.5 -3"
           obj-model="obj: #ship-obj; mtl: #ship-mtl"
           scale="0.75 0.75 0.75"
         ></a-mixin>
         <a-mixin id="monster"
-          animation__monsterpositionone="property: position; dur: 5000; fill: forward; to: 0 0 -8; from: 0 -10 -8; autoplay: true"
+          animation__monsterpositionone="property: position; dur: 5000; fill: forward; to: 0 0.5 -8; from: 0 -10 -8; autoplay: true"
+          animation__monsterrotationone="property: rotation;  dir: alternate; easing: easeInOutSine; loop: true; delay: 5000; dur: 300; to: 30 180 0; autoplay: true; loop: true"
+          animation__monsterpositiontwo="property: position; delay: 5500; dur: 1000; fill: forward; from: 0 0.5 -8; to: 0 0.5 6; autoplay: true"
           scale="5 5 5"
           position="0 0 -5"
           rotation="50 180 0"
@@ -48,7 +51,7 @@
         id="ship1"
         mixin="ship"
       >
-        <a-animation
+        <!-- <a-animation
           attribute="rotation"
           dur="750"
           from="20 5 -5"
@@ -58,14 +61,14 @@
           direction="alternate-reverse"
           easing="ease-in-out-cubic"
         >
-        <a-animation>
+        <a-animation> -->
       </a-entity>
       <a-entity
         id="seamonster1"
         mixin="monster"
       >
       </a-entity>
-      <a-ocean  width="50" depth="50" density="50" speed="20">
+      <a-ocean  width="50" depth="50" density="50" speed="10">
       </a-ocean>
   </a-scene>
   </body>
