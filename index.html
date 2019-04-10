@@ -30,7 +30,7 @@
         <a-mixin id="ship"
           animation__positionone="property: position; dur: 5000; fill: forward; to: 0 0.5 -3; from: 10 0.5 -3; autoplay: true"
           animation__rotationone="property: rotation; fill: forward;  easing: easeInOutSine; delay: 5000; dur: 300; to: 0 90 0; autoplay: true;"
-          animation__positiontwo="property: position; delay: 5400; dur: 1000; fill: forward; to: 0 0.5 6; from: 0 0.5 -3; autoplay: true"
+          animation__positiontwo="property: position; delay: 5400; dur: 2000; fill: forward; to: 0 0.5 6; from: 0 0.5 -3; autoplay: true"
           position="10 0.5 -3"
           obj-model="obj: #ship-obj; mtl: #ship-mtl"
           scale="0.75 0.75 0.75"
@@ -38,7 +38,7 @@
         <a-mixin id="monster"
           animation__monsterpositionone="property: position; dur: 5000; fill: forward; to: 0 0.5 -8; from: 0 -10 -8; autoplay: true"
           animation__monsterrotationone="property: rotation;  dir: alternate; easing: easeInOutSine; loop: true; delay: 5000; dur: 300; to: 30 180 0; autoplay: true; loop: true"
-          animation__monsterpositiontwo="property: position; delay: 5500; dur: 1000; fill: forward; from: 0 0.5 -8; to: 0 0.5 6; autoplay: true"
+          animation__monsterpositiontwo="property: position; delay: 5500; dur: 2000; fill: forward; from: 0 0.5 -8; to: 0 0.5 6; autoplay: true"
           scale="5 5 5"
           position="0 0 -5"
           rotation="50 180 0"
@@ -68,7 +68,7 @@
         mixin="monster"
       >
       </a-entity>
-      <a-ocean  width="50" depth="50" density="50" speed="10">
+      <a-ocean  width="50" depth="50" density="100" speed="10" opacity="1.0">
       </a-ocean>
   </a-scene>
   </body>
